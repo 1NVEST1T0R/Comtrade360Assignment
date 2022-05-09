@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>List Hello World</title>
+</head>
+<body>
+<h2>List Hello World Translations</h2>
+<a th:href="@{'/demo/templates/NewLanguage.html'}">Add New Language</a>
+<br/>
+<table th:if="${ not #lists.isEmpty(texts) }" border=1>
+  <tr>
+    <td>ID</td>
+    <td>Text</td>
+    <td>Language</td>
+  </tr>
+  <tr th:each="text : ${texts}">
+    <td th:text="${text.id}"></td>
+    <td th:text="${text.hello}"></td>
+    <td th:text="${text.lang}"></td>
+  </tr>
+</table>
+</body>
+</html>
